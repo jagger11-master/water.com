@@ -8,13 +8,11 @@
     background-color: #1a1a1a;
     color: #ffffff;
     font-family: Arial, sans-serif;
-    line-height: 1.6;
 }
 
 .navbar {
     position: fixed;
     top: 0;
-    left: 0;
     width: 100%;
     height: 70px;
     background-color: #111111;
@@ -23,7 +21,6 @@
     align-items: center;
     z-index: 1000;
     border-bottom: 1px solid #333333;
-    font-family: "Courier New", monospace; 
 }
 
 .nav-container {
@@ -33,24 +30,86 @@
     flex-direction: row-reverse;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
 .nav-logo {
     font-size: 24px;
     font-weight: bold;
     color: tomato;
+    font-family: "Courier New", monospace;
 }
 
 .nav-menu {
     display: flex;
-    gap: 20px;
+    gap: 2rem;
     list-style: none;
 }
 
 .nav-menu li a {
-    font-size: 16px;
     text-decoration: none;
-    color: inherit;
+    color: white;
+    font-weight: 500;
+}
+
+#nav-check {
+    display: none;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 4px;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 140px;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: rgba(18, 18, 18, 0.95);
+        border: 1px solid tomato;
+        border-radius: 8px;
+        text-align: left;
+        padding: 10px 15px;
+        z-index: 999;
+    }
+
+    #nav-check:checked ~ .nav-menu {
+        display: flex;
+    }
+
+    #nav-check:checked ~ .menu-toggle .bar:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    #nav-check:checked ~ .menu-toggle .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    #nav-check:checked ~ .menu-toggle .bar:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+
+    .nav-menu li {
+        margin: 10px 0;
+    }
 }
 
 .content-wrapper {
@@ -60,36 +119,18 @@
     align-items: center;
 }
 
-.about-section, 
-.services-section, 
-.action-section, 
-.location-section,
-.footer-container {
+.about-section, .services-section, .action-section, .footer-container {
     width: 80%;
     max-width: 800px;
     margin: 0 auto 50px auto;
     text-align: left;
 }
 
-.section-title, .action-title, .location-title, .footer-title {
+.section-title {
     font-size: 32px;
+    color: tomato;
     margin: 20px 0;
-    color: tomato;
     text-transform: uppercase;
-}
-
-.description, .item-text {
-    font-size: 18px;
-    color: #dddddd;
-    margin-bottom: 30px;
-}
-
-.item-title {
-    font-size: 24px;
-    font-weight: bold;
-    color: tomato;
-    margin: 20px 0 10px 0;
-    display: block;
 }
 
 .slider-container {
@@ -98,12 +139,6 @@
     position: relative;
     overflow: hidden;
     border-radius: 20px;
-    margin: 20px 0;
-}
-
-.slider-images {
-    width: 100%;
-    height: 100%;
 }
 
 .slide-img {
@@ -111,71 +146,41 @@
     height: 100%;
     object-fit: cover;
     position: absolute;
-    top: 0;
-    left: 0;
     opacity: 0;
-    transition: opacity 1s ease-in-out;
+    transition: 1s;
 }
 
 .slide-img.active {
     opacity: 1;
 }
 
-.float-img, .map-frame {
+.float-img {
     width: 100%;
     height: 400px;
     object-fit: cover;
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     margin: 20px 0;
-}
-
-.issue-box {
-    width: 100%;
-    text-align: left;
 }
 
 .main-input {
     width: 100%;
     max-width: 400px;
     padding: 15px;
-    margin-bottom: 15px;
     background-color: #252525;
     border: 1px solid #444444;
     border-radius: 10px;
-    color: #ffffff;
+    color: white;
+    margin-bottom: 15px;
     display: block;
     outline: none;
 }
 
-.submit-btn, .location-btn {
+.submit-btn {
     padding: 15px 40px;
     background-color: #28a745;
-    color: #ffffff;
+    color: white;
     border: none;
     border-radius: 10px;
-    font-size: 16px;
     font-weight: bold;
     cursor: pointer;
-    display: block;
-}
-
-.location-btn {
-    background-color: tomato;
-    margin-top: 20px;
-}
-
-.services-list {
-    list-style: none;
-}
-
-.footer-bottom {
-    margin-top: 30px;
-    border-top: 1px solid #333333;
-    padding-top: 20px;
-}
-
-.footer-links a {
-    text-decoration: none;
-    color: #888888;
 }

@@ -8,15 +8,24 @@
 </head>
 <body class="main-body">
     <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">WaSupS.com</div>
-            <ul class="nav-menu">
-                <li><a href="#about">About-WaSups</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contacts</a></li>
-            </ul>
-        </div>
-    </nav>
+    <div class="nav-container">
+        <div class="nav-logo">WaSupS</div>
+        
+        <input type="checkbox" id="nav-check">
+        <label for="nav-check" class="menu-toggle">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </label>
+
+        <ul class="nav-menu">
+            <li><a href="#about">About-Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contacts</a></li>
+        </ul>
+    </div>
+</nav>
+
     
     <main class="content-wrapper">
         <section id="about" class="about-section">
@@ -27,7 +36,7 @@
                     <img src="images/toi.jpg" class="slide-img" alt="Toi">
                 </div>
             </div>
-            <h3 class="section-title">About-WaSups</h3>
+            <h3 class="section-title">About-Us</h3>
             <h5 class="sub-title">Hi there..</h5>
             <p class="description">
                 We are WaSups a Private sector that resolves Water problems in Tanzanian society,<br>
@@ -79,14 +88,6 @@
                 <input type="text" id="userInput" class="main-input" placeholder="Type your issue here....">
                 <button onclick="submitIssue()" class="submit-btn">submit</button>
             </div>
-        </section>
-
-        <section class="location-section">
-            <h4 class="location-title">Your-Current-Location</h4>
-            <div class="map-box">
-                <iframe class="map-frame" src="https://google.com" allowfullscreen></iframe>
-            </div>
-            <button type="button" class="location-btn" onclick="getLocation()">Check Your Location Here..</button>
         </section>
     </main>
 
