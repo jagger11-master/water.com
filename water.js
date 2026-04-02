@@ -2,43 +2,46 @@ let slideIndex = 0;
 
 function showSlides() {
     let slides = document.getElementsByClassName("slide-img");
-    
     for (let i = 0; i < slides.length; i++) {
         slides[i].classList.remove("active");
     }
-    
     slideIndex++;
-    
     if (slideIndex > slides.length) {
         slideIndex = 1;
     }
-    
     if (slides.length > 0) {
         slides[slideIndex - 1].classList.add("active");
     }
-    
     setTimeout(showSlides, 3000);
 }
 
-showSlides();
+const observerOptions = {
+    threshold: 0.1
+};
 
-const menuToggle = document.getElementById('nav-check');
-const navMenu = document.querySelector('.nav-menu');
-
-if (menuToggle) {
-    menuToggle.addEventListener('change', function() {
-        if (this.checked) {
-            navMenu.classList.add('active');
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("active");
         } else {
-            navMenu.classList.remove('active');
+            entry.target.classList.remove("active");
         }
     });
-}
+}, observerOptions);
+
+document.querySelectorAll(".reveal").forEach((el) => {
+    observer.observe(el);
+});
+
+showSlides();
 
 function submitIssue() {
     const input = document.getElementById('userInput');
     if (input && input.value.trim() !== "") {
-        alert("Issue submitted");
+        alert("Issue Received");
         input.value = "";
+    }
+    else{
+        alert("please type your issue again");
     }
 }
