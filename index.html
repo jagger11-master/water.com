@@ -6,92 +6,103 @@
     <title>Water-sytem</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <nav class="">
-        <div class="">
-            WaSupS.com
+<body class="main-body">
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">WaSupS.com</div>
+            <ul class="nav-menu">
+                <li><a href="#about">About-WaSups</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contacts</a></li>
+            </ul>
         </div>
-        <button class="">
-            <span  class=""></span>
-            <span class=""></span>
-            <span class=""></span>
-        </button>
-        <ul class="">
-            <li><a href="About-WaSups">About-WaSups</a></li>
-            <li><a href="Services">Services</a></li>
-            <li><a href="Contact">Contacts</a></li>
-        </ul>
     </nav>
-
-
-    <main>
-        <div class="">
-            <h3 class="">About-WaSups</h3>
-            <h5>Hi there..</h5>
-            <p>We are WaSups a Private sector that resolves Water problems in Tanzanian society,<br>Providing innovative Technology about Water flow in the commmunity especially Tanzaniania<br>
-            We are Striving to become the most preferred Company for our clients,Partiners,<br>and Stakeholders in terms of quality of services we copperate with Government Institutions(DAWASA),And Non-Government Institutions<br>
-        Our Technology Products are Focusing on the future of Works,from the offices to remotes working.</p>
-        </div>
-
-
-        <div class="">
-            <h3 class="">Services</h3>
-            <ul class="">
-                <li>Water-Quality-Reports
-                <p>Access to annual Consumer Confidence Reports(CCRs),or in many casesm,real-time testing results,providing transparency into water safety</p>
-                </li>
-                <li>Services-Outages and Updates
-                    <p>real-time information on Scheduled Maintenance,services interruptions,or boil water notices</p>
-                </li>
-                <li>FaQ and Help Resources
-                    <p>access to common questions and supports,Reducing the need to Contact the call center</p>
-                </li>
-                <li>Emmergency And safety reporting
-                    <p>Reporting  a leak/Burst Pipe through an online,often based map system that reports the water mains breaks,leaks Or Low pressure</p>
-                </li>
-
-            </ul>
-
-        </div>
-        <div class="">
-            <h4 class="">Now-Get-started</h4>
-        </div>
-        <div class="">
-            <ul>
-                <li>Report-Issue</li>
-                <input type="text" id="userInput" placeholder="Type your issue here....">
-                <button onclick="submitIssue()">submit</button>
-            </ul>
-        </div>
-    </div>
-
-    <div class="location-section">
-        <ul>
-            <li>Your-Current-Location</li>
-            <div class=" ">
-                <iframe  class="map-iframe"src="https://google.com" allowfullscreen></iframe>
+    
+    <main class="content-wrapper">
+        <section id="about" class="about-section">
+             <div class="slider-container">
+                <div class="slider-images">
+                    <img src="images/suv.jpg" class="slide-img active" alt="SUV">
+                    <img src="images/gov.jpg" class="slide-img" alt="Gov">
+                    <img src="images/toi.jpg" class="slide-img" alt="Toi">
+                </div>
             </div>
+            <h3 class="section-title">About-WaSups</h3>
+            <h5 class="sub-title">Hi there..</h5>
+            <p class="description">
+                We are WaSups a Private sector that resolves Water problems in Tanzanian society,<br>
+                Providing innovative Technology about Water flow in the community especially Tanzania.<br>
+                We are Striving to become the most preferred Company for our clients, Partners,<br>
+                and Stakeholders in terms of quality of services we cooperate with Government Institutions(DAWASA), and Non-Government Institutions.<br>
+                Our Technology Products are Focusing on the future of Works, from the offices to remote working.
+            </p>
+        </section>
 
-            <button type="button" class="btn-location">Check Your Location Here..</button>
-        </ul>
-    </div>
-</div>
+        <section id="services" class="services-section">
+            <h3 class="section-title">Services</h3>
+            <ul class="services-list">
+                <li class="service-item">
+                    <span class="item-title">Water-Quality-Reports</span>
+                    <div class="floating-img-box">
+                        <img src="images/tap.jpg" class="float-img" alt="Tap">
+                    </div>
+                    <p class="item-text">Access to annual Consumer Confidence Reports(CCRs), or in many cases, real-time testing results, providing transparency into water safety.</p>
+                </li>
+                <li class="service-item">
+                    <span class="item-title">Services-Outages and Updates</span>
+                    <div class="floating-img-box">
+                      <img src="images/hand.jpg" class="float-img" alt="Hand">
+                    </div>
+                    <p class="item-text">Real-time information on scheduled Maintenance, services interruptions, or boil water notices.</p>
+                </li>
+                <li class="service-item">
+                    <span class="item-title">FaQ and Help Resources</span>
+                    <div class="floating-img-box">
+                     <img src="images/babe.jpg" class="float-img" alt="Babe">
+                    </div>
+                    <p class="item-text">Access to common questions and supports, reducing the need to contact the call center.</p>
+                </li>
+                <li class="service-item">
+                    <span class="item-title">Emergency And safety reporting</span>
+                    <div class="floating-img-box">
+                     <img src="images/we.jpg" class="float-img" alt="We">
+                    </div>
+                    <p class="item-text">Reporting a leak/Burst Pipe through an online, often based map system that reports the water mains breaks, leaks or low pressure.</p>
+                </li>
+            </ul>
+        </section>
+
+        <section class="action-section">
+            <h4 class="action-title">Now-Get-started</h4>
+            <div class="issue-box">
+                <p class="item-title">Report-Issue</p>
+                <input type="text" id="userInput" class="main-input" placeholder="Type your issue here....">
+                <button onclick="submitIssue()" class="submit-btn">submit</button>
+            </div>
+        </section>
+
+        <section class="location-section">
+            <h4 class="location-title">Your-Current-Location</h4>
+            <div class="map-box">
+                <iframe class="map-frame" src="https://google.com" allowfullscreen></iframe>
+            </div>
+            <button type="button" class="location-btn" onclick="getLocation()">Check Your Location Here..</button>
+        </section>
     </main>
-    <footer>
-        <nav class="">
-            <h3>Contact</h3>
-        </nav>
-        <address>
-            Email: <a href="water:SupportWaSups@gmail.com">SupportWaSups@gmail.com</a><br>
-            Phone:+255698162028
-        </address>
-        <div class="">
-            <small>
-                &copy.2026 WaSups.All rights reserved.
-            </small>
-            <nav class="">
-                <a href="">Privacy  Policy</a> | <a href="">Terms of services</a>
-            </nav>
+
+    <footer id="contact" class="main-footer">
+        <div class="footer-container">
+            <h3 class="footer-title">Contact</h3>
+            <address class="contact-info">
+                Email: <a href="mailto:SupportWaSups@gmail.com">SupportWaSups@gmail.com</a><br>
+                Phone: +255698162028
+            </address>
+            <div class="footer-bottom">
+                <small class="copyright">&copy; 2026 WaSups. All rights reserved.</small>
+                <nav class="footer-links">
+                    <a href="#">Privacy Policy</a> | <a href="#">Terms of services</a>
+                </nav>
+            </div>
         </div>
     </footer>
     <script src="water.js" defer></script>
